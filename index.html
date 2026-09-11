@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aero City</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #a8e6ff 0%, #d4f1f9 25%, #b8f2e6 50%, #a0e7e5 75%, #87ceeb 100%);
+      background-attachment: fixed;
+      color: #1a3a4a;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Burbujas flotantes */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.6), 0 0 15px rgba(100,200,255,0.3);
+      animation: float 12s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-40px) translateX(20px); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    /* Tarjeta de cristal */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 
+        0 8px 32px rgba(31, 120, 180, 0.2),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+      padding: 50px 40px;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-size: 3.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #0077b6, #00b4d8, #48cae4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 2px 10px rgba(0,150,200,0.2);
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+      color: #2a5a6a;
+      margin-bottom: 35px;
+      font-weight: 500;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #1e4a5a;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .btn-discord {
+      background: linear-gradient(135deg, #5865F2, #7289da);
+      color: white;
+    }
+
+    .btn-discord:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(88, 101, 242, 0.4);
+    }
+
+    .btn-tiktok {
+      background: linear-gradient(135deg, #ff0050, #00f2ea);
+      color: white;
+    }
+
+    .btn-tiktok:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(255, 0, 80, 0.35);
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.95rem;
+      color: #3a6a7a;
+      opacity: 0.85;
+    }
+
+    /* Detalles decorativos */
+    .shine {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Burbujas -->
+  <div class="bubble" style="width:80px; height:80px; top:10%; left:8%; animation-delay:0s;"></div>
+  <div class="bubble" style="width:50px; height:50px; top:25%; left:85%; animation-delay:2s;"></div>
+  <div class="bubble" style="width:120px; height:120px; top:60%; left:5%; animation-delay:4s;"></div>
+  <div class="bubble" style="width:70px; height:70px; top:75%; left:80%; animation-delay:1s;"></div>
+  <div class="bubble" style="width:40px; height:40px; top:40%; left:50%; animation-delay:3s;"></div>
+
+  <div class="container">
+    <div class="glass-card">
+      <div class="shine"></div>
+      <h1 class="logo">Aero City</h1>
+      <p class="tagline">✦ Comunidad Frutiger Aero en Discord ✦</p>
+      
+      <p class="description">
+        Un espacio relajado y nostálgico inspirado en la estética Frutiger Aero. 
+        Agua, cielo, burbujas y buena vibra. Únete a la ciudad, todo en un solo lugar.
+      </p>
+
+      <div class="buttons">
+        <a href="https://discord.gg/VCPsWHT5HB" class="btn btn-discord" target="_blank">
+          <span>🎧</span> Unirse al Servidor
+        </a>
+        <a href="https://www.tiktok.com/@aerocity2" class="btn btn-tiktok" target="_blank">
+          <span>🎵</span> TikTok Oficial
+        </a>
+      </div>
+    </div>
+
+    <p class="footer">El Futuro que nos prometieron</p>
+  </div>
+</body>
+</html>
